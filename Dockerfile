@@ -8,7 +8,6 @@ RUN apt-get update && \
 
 # Install Python and pip
 RUN apt-get install -y python3 python3-pip
-
 # Install Python dependencies
 RUN pip install websockets
 
@@ -19,4 +18,4 @@ WORKDIR /app
 COPY . /app
 
 # Specify the command to run when the container starts
-CMD ["python", "server.py"]
+CMD ["python3", "server.py"]

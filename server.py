@@ -4,7 +4,7 @@ import subprocess
 
 # WebSocket server configuration
 HOST = "localhost"
-PORT = 8080
+PORT = 5000
 
 # GStreamer pipeline
 pipeline = (
@@ -15,6 +15,7 @@ async def handle_connection(websocket, path):
     print("Client connected")
     try:
         # Extract the rtmpUrl from the path
+        print("Livestreaming to",path)
         rtmp_url = path
         full_pipeline = pipeline + rtmp_url
 
